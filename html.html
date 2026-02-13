@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的配色收藏 - 完整 15 組</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#F5F5F5;padding:30px 20px}
+        .container{max-width:1400px;margin:0 auto}
+        header{text-align:center;margin-bottom:40px}
+        h1{color:#333;font-size:2.2em;margin-bottom:8px}
+        .sub{color:#999;font-size:1em}
+        .cat{margin-bottom:45px}
+        .cat-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid #e0e0e0}
+        .cat-icon{font-size:1.5em}
+        .cat-title{color:#333;font-size:1.25em;font-weight:700}
+        .cat-desc{color:#aaa;font-size:.85em;margin-left:auto}
+        .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:22px}
+        @media(max-width:460px){.grid{grid-template-columns:1fr}}
+        .card{background:white;border-radius:14px;overflow:hidden;border:1px solid #e5e5e5;transition:transform .3s,box-shadow .3s}
+        .card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.1)}
+        .card-head{padding:12px 16px;display:flex;justify-content:space-between;align-items:center;background:#fafafa;border-bottom:1px solid #eee}
+        .card-head h3{color:#333;font-size:1em;font-weight:700}
+        .card-num{background:#eee;color:#888;padding:3px 10px;border-radius:20px;font-size:.75em;font-weight:600}
+        .dots{display:flex;gap:6px;padding:10px 16px;background:#fafafa;border-bottom:1px solid #eee}
+        .dots span{width:20px;height:20px;border-radius:50%;border:2px solid rgba(0,0,0,.08);cursor:pointer;transition:transform .2s;position:relative}
+        .dots span:hover{transform:scale(1.3)}
+        .dots span::after{content:attr(data-hex);position:absolute;bottom:-24px;left:50%;transform:translateX(-50%);font-size:9px;font-family:monospace;color:#555;white-space:nowrap;opacity:0;transition:opacity .2s;background:white;padding:2px 6px;border-radius:4px;box-shadow:0 2px 6px rgba(0,0,0,.15);z-index:10}
+        .dots span:hover::after{opacity:1}
+        .hex-row{padding:6px 16px;font-size:10px;color:#aaa;font-family:monospace;border-bottom:1px solid #f0f0f0;white-space:nowrap;overflow-x:auto}
+        .mn{padding:10px 16px;display:flex;align-items:center;justify-content:space-between}
+        .mn .logo{font-weight:700;font-size:.9em}
+        .mn .lk{display:flex;gap:10px;font-size:10px;opacity:.8}
+        .mh{padding:24px 20px;text-align:center}
+        .mh h2{font-size:1.1em;margin-bottom:6px}
+        .mh p{font-size:10px;margin-bottom:14px;line-height:1.5;opacity:.7;max-width:340px;margin-left:auto;margin-right:auto}
+        .mb{padding:8px 22px;border:none;border-radius:6px;font-weight:600;font-size:10px;cursor:pointer}
+        .mbo{background:transparent;border:2px solid;padding:6px 18px;border-radius:6px;font-weight:600;font-size:10px;cursor:pointer;margin-left:6px}
+        .mc{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:12px 16px}
+        .mci{padding:12px 8px;border-radius:6px;text-align:center}
+        .mci h4{font-size:10px;margin-bottom:2px}
+        .mci p{font-size:8px;opacity:.6}
+        .copy-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:#333;color:white;padding:12px 24px;border-radius:10px;font-weight:600;font-size:13px;opacity:0;transition:all .3s;z-index:1000}
+        .copy-toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+        .footer{text-align:center;color:#bbb;font-size:.85em;margin-top:40px;padding-top:20px;border-top:2px solid #e0e0e0}
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>🎨 我的配色收藏</h1>
+        <p class="sub">精選 15 組 ｜ 點擊色點複製 Hex</p>
+    </header>
+
+    <!-- ===== 自然溫暖系 ===== -->
+    <div class="cat">
+        <div class="cat-header"><span class="cat-icon">🌿</span><span class="cat-title">自然溫暖系</span><span class="cat-desc">家居、餐飲、手作、文創</span></div>
+        <div class="grid">
+            <!-- 大地陶土風 -->
+            <div class="card">
+                <div class="card-head"><h3>大地陶土風</h3><span class="card-num">01</span></div>
+                <div class="dots"><span style="background:#C67453" data-hex="#C67453" onclick="cc('#C67453')"></span><span style="background:#E8A598" data-hex="#E8A598" onclick="cc('#E8A598')"></span><span style="background:#6B7D4A" data-hex="#6B7D4A" onclick="cc('#6B7D4A')"></span><span style="background:#F2EDE4" data-hex="#F2EDE4" onclick="cc('#F2EDE4')"></span></div>
+                <div class="hex-row">主 #C67453 ｜ 輔 #E8A598 ｜ 強調 #6B7D4A ｜ 背景 #F2EDE4</div>
+                <div><div class="mn" style="background:#C67453;color:white"><span class="logo">MyBrand</span><div class="lk"><span>首頁</span><span>產品</span><span>關於</span><span>聯繫</span></div></div><div class="mh" style="background:#F2EDE4;color:#5C4033"><h2>打造你的理想生活</h2><p>我們提供最優質的服務，讓每一天都充滿陽光與活力。</p><button class="mb" style="background:#6B7D4A;color:white">立即開始</button><button class="mbo" style="color:#C67453;border-color:#C67453">了解更多</button></div><div class="mc" style="background:white"><div class="mci" style="background:#F2EDE4;color:#5C4033"><h4>🌱 快速啟動</h4><p>三步驟完成</p></div><div class="mci" style="background:#f7ece5;color:#5C4033"><h4>🎨 自由定制</h4><p>彈性選擇</p></div><div class="mci" style="background:#F2EDE4;color:#5C4033"><h4>💬 即時支援</h4><p>24小時待命</p></div></div></div>
+            </div>
+            <!-- 咖啡館風 -->
+            <div class="card">
+                <div class="card-head"><h3>咖啡館風</h3><span class="card-num">02</span></div>
+                <div class="dots"><span style="background:#6F4E37" data-hex="#6F4E37" onclick="cc('#6F4E37')"></span><span style="background:#A67B5B" data-hex="#A67B5B" onclick="cc('#A67B5B')"></span><span style="background:#D4A574" data-hex="#D4A574" onclick="cc('#D4A574')"></span><span style="background:#FFF8F1" data-hex="#FFF8F1" onclick="cc('#FFF8F1')"></span><span style="background:#3E2723" data-hex="#3E2723" onclick="cc('#3E2723')"></span></div>
+                <div class="hex-row">主 #6F4E37 ｜ 輔 #A67B5B ｜ 強調 #D4A574 ｜ 背景 #FFF8F1 ｜ 文字 #3E2723</div>
+                <div><div class="mn" style="background:#6F4E37;color:white"><span class="logo">MyBrand</span><div class="lk"><span>首頁</span><span>產品</span><span>關於</span><span>聯繫</span></div></div><div class="mh" style="background:#FFF8F1;color:#3E2723"><h2>打造你的理想生活</h2><p>我們提供最優質的服務，讓每一天都充滿陽光與活力。</p><button class="mb" style="background:#A67B5B;color:white">立即開始</button><button class="mbo" style="color:#6F4E37;border-color:#6F4E37">了解更多</button></div><div class="mc" style="background:white"><div class="mci" style="background:#FFF8F1;color:#3E2723"><h4>☕ 快速啟動</h4><p>三步驟完成</p></div><div class="mci" style="background:#f5ece2;color:#3E2723"><h4>🎨 自由定制</h4><p>彈性選擇</p></div><div class="mci" style="background:#FFF8F1;color:#3E2723"><h4>💬 即時支援</h4><p>24小時待命</p></div></div></div>
+            </div>
+            <!-- 日式侘寂風 -->
+            <div class="card">
+                <div class="card-head"><h3>日式侘寂風</h3><span class="card-num">03</span></div>
+                <div class="dots"><span style="background:#8B7D6B" data-hex="#8B7D6B" onclick="cc('#8B7D6B')"></span><span style="background:#BEB4A4" data-hex="#BEB4A4" onclick="cc('#BEB4A4')"></span><span style="background:#C75B39" data-hex="#C75B39" onclick="cc('#C75B39')"></span><span style="background:#F7F4EF" data-hex="#F7F4EF" onclick="cc('#F7F4EF')"></span><span style="background:#3C352E" data-hex="#3C352E" onclick="cc('#3C352E')"></span></div>
+                <div class="hex-row">主 #8B7D6B ｜ 輔 #BEB4A4 ｜ 強調 #C75B39 ｜ 背景 #F7F4EF ｜ 文字 #3C352E</div>
+                <div><div class="mn" style="background:#8B7D6B;color:white"><span class="logo">MyBrand</span><div class="lk"><span>首頁</span><span>產品</span><span>關於</span><span>聯繫</span></div></div><div class="mh" style="background:#F7F4EF;color:#3C352E"><h2>打造你的理想生活</h2><p>我們提供最優質的服務，讓每一天都充滿陽光與活力。</p><button class="mb" style="background:#C75B39;color:white">立即開始</button><button class="mbo" style="color:#8B7D6B;border-color:#8B7D6B">了解更多</button></div><div class="mc" style="background:white"><div class="mci" style="background:#F7F4EF;color:#3C352E"><h4>🍵 快速啟動</h4><p>三步驟完成</p></div><div class="mci" style="background:#f0ece4;color:#3C352E"><h4>🎨 自由定制</h4><p>彈性選擇</p></div><div class="mci" style="background:#F7F4EF;color:#3C352E"><h4>💬 即時支援</h4><p>24小時待命</p></div></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 活力清新系 ===== -->
+    <div class="cat">
+        <div class="cat-header"><span class="cat-icon">🌊</span><span class="cat-title">活力清新系</span><span class="cat-desc">旅遊、運動、兒童、娛樂</span></div>
+        <div class="grid">
+            <!-- 清新現代風 -->
+            <div class="card">
+                <div class="card-head"><h3>清新現代風</h3><span class="card-num">04</span></div>
+                <div class="dots"><span style="background:#00B4D8" data-hex="#00B4D8" onclick="cc('#00B4D8')"></span><span style="background:#90E0EF" data-hex="#90E0EF" onclick="cc('#90E0EF')"></span><span style="background:#FFD60A" data-hex="#FFD60A" onclick="cc('#FFD60A')"></span><span style="background:#F8F9FA" data-hex="#F8F9FA" onclick="cc('#F8F9FA')"></span><span style="background:#2D6A7A" data-hex="#2D6A7A" onclick="cc('#2D6A7A')"></span></div>
+                <div class="hex-row">主 #00B4D8 ｜ 輔 #90E0EF ｜ 強調 #FFD60A ｜ 背景 #F8F9FA ｜ 文字 #2D6A7A</div>
+                <div><div class="mn" style="background:#00B4D8;color:white"><span class="logo">MyBrand</span><div class="lk"><span>首頁</span><span>產品</span><span>關於</span><span>聯繫</span></div></div><div class="mh" style="background:#F8F9FA;color:#2D6A7A"><h2>打造你的理想生活</h2><p>我們提供最優質的服務，讓每一天都充滿陽光與活力。</p><button class="mb" style="background:#FFD60A;color:#2D6A7A">立即開始</button><button class="mbo" style="color:#00B4D8;border-color:#00B4D8">了解更多</button></div><div class="mc" style="background:white"><div class="mci" style="background:#eef9fc;color:#2D6A7A"><h4>🚀 快速啟動</h4><p>三步驟完成</p></div><div class="mci" style="background:#fffce6;color:#2D6A7A"><h4>🎨 自由定制</h4><p>彈性選擇</p></div><div class="mci" style="background:#eef9fc;color:#2D6A7A"><h4>💬 即時支援</h4><p>24小時待命</p></div></div></div>
+            </div>
+            <!-- 珊瑚海灘風 -->
+            <div class="card">
+                <div class="card-head"><h3>珊瑚海灘風</h3><span class="card-num">05</span></div>
+                <div class="dots"><span style="background:#FF6B6B" data-hex="#FF6B6B" onclick="cc('#FF6B6B')"></span><span style="background:#4ECDC4" data-hex="#4ECDC4" onclick="cc('#4ECDC4')"></span><span style="background:#FFE66D" data-hex="#FFE66D" onclick="cc('#FFE66D')"></span><span style="background:#FFFEF9" data-hex="#FFFEF9" onclick="cc('#FFFEF9')"></span><span style="background:#2C3E50" data-hex="#2C3E50" onclick="cc('#2C3E50')"></span></div>
+                <div class="hex-row">主 #FF6B6B ｜ 輔 #4ECDC4 ｜ 強調 #FFE66D ｜ 背景 #FFFEF9 ｜ 文字 #2C3E50</div>
+                <div><div class="mn" style="background:#FF6B6B;color:white"><span class="logo">MyBrand</span><div class="lk"><span>首頁</span><span>產品</span><span>關於</span><span>聯繫</span></div></div><div class="mh" style="background:#FFFEF9;color:#2C3E50"><h2>打造你的理想生活</h2><p>我們提供最優質的服務，讓每一天都充滿陽光與活力。</p><button class="mb" style="background:#4ECDC4;color:white">立即開始</button><button class="mbo" style="color:#FF6B6B;border-color:#FF6B6B">了解更多</button></div><div class="mc" style="background:white"><div class="mci" style="background:#fff5f5;color:#2C3E50"><h4>🌴 快速啟動</h4><p>三步驟完成</p></div><div class="mci" style="background:#e8faf8;color:#2C3E50"><h4>🎨 自由定制</h4><p>彈性選擇</p></div><div class="mci" style="background:#fffde6;color:#2C3E50"><h4>💬 即時支援</h4><p>24小時待命</p></div></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 優雅時尚系 ===== -->
+    <div class="cat">
+        <div class="cat-header"><span class="cat-icon">💜</span><span class="cat-title">優雅時尚系</span><span class="cat-desc">美妝、時尚、生活風格</span></div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-head"><h3>薰衣草田野風</h3><span class="card-num">06</span></div>
+                <div class="dots"><span style="background:#9381FF" data-hex="#9381FF" onclick="cc('#9381FF')"></span><span style="background:#B8B8FF" data-hex="#B8B8FF" onclick="cc('#B8B8FF')"></span><span style="background:#F8F7FF" data-hex="#F8F7FF" onclick="cc('#F8F7FF')"></span><span style="background:#FFEEDD" data-hex="#FFEEDD" onclick="cc('#FFEEDD')"></span><span style="background:#3D3875" data-hex="#3D3875" onclick="cc('#3D3875')"></span></div>
+                <div class="hex-row">主 #9381FF ｜ 輔 #B8B8FF ｜ 背景 #F8F7FF ｜ 強調 #FFEEDD ｜ 文字 #3D3875</div>
+                <div><div class="mn" style="background:#9381FF;color:white"><span class="logo">MyBrand</span><div class="lk"><span>首頁</span><span>產品</span><span>關於</span><span>聯繫</span></div></div><div class="mh" style="background:#F8F7FF;color:#3D3875"><h2>打造你的理想生活</h2><p>我們提供最優質的服務，讓每一天都充滿陽光與活力。</p><button class="mb" style="background:#9381FF;color:white">立即開始</button><button class="mbo" style="color:#9381FF;border-color:#9381FF">了解更多</button></div><div class="mc" style="background:white"><div class="mci" style="background:#F8F7FF;color:#3D3875"><h4>💜 快速啟動</h4><p>三步驟完成</p></div><div class="mci" style="background:#FFEEDD;color:#3D3875"><h4>🎨 自由定制</h4><p>彈性選擇</p></div><div class="mci" style="background:#F8F7FF;color:#3D3875"><h4>💬 即時支援</h4><p>24小時待命</p></div></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 都會經典系 ===== -->
+    <div class="cat">
+        <div class="cat-header"><span class="cat-icon">🏛️</span><span class="cat-title">都會經典系</span><span class="cat-desc">金融、建築、教育、高端品牌</span></div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-head"><h3>工業都會風</h3><span class="card-num">07</span></div>
+                <div class="dots"><span style="background:#4A6670" data-hex="#4A6670" onclick="cc('#4A6670')"></span><span style="background:#6B7B8C" data-hex="#6B7B8C" onclick="cc('#6B7B8C')"></span><span style="background:#B8B8B0" data-hex="#B8B8B0" onclick="cc('#B8B8B0')"></span><span style="background:#E8E4DC" data-hex="#E8E4DC" onclick="cc('#E8E4DC')"></span><span style="background:#E86A33" data-hex="#E86A33" onclick="cc('#E86A33')"></span></div>
+                <div class="hex-row">主 #4A6670 ｜ 輔 #6B7B8C ｜ 輔 #B8B8B0 ｜ 背景 #E8E4DC ｜ 強調 #E86A33</div>
+                <div><div class="mn" style="background:#4A6670;color:white"><span class="logo">MyBrand</span><div class="lk"><span>首頁</span><span>產品</span><span>關於</span><span>聯繫</span></div></div><div class="mh" style="background:#E8E4DC;color:#4A6670"><h2>打造你的理想生活</h2><p>我們提供最優質的服務，讓每一天都充滿陽光與活力。</p><button class="mb" style="background:#E86A33;color:white">立即開始</button><button class="mbo" style="color:#4A6670;border-color:#4A6670">了解更多</button></div><div class="mc" style="background:white"><div class="mci" style="background:#E8E4DC;color:#4A6670"><h4>⚙️ 快速啟動</h4><p>三步驟完成</p></div><div class="mci" style="background:#f0eee8;color:#4A6670"><h4>🎨 自由定制</h4><p>彈性選擇</p></div><div class="mci" style="background:#E8E4DC;color:#4A6670"><h4>💬 即時支援</h4><p>24小時待命</p></div></div></div>
+            </div>
+            <div class="card">
+                <div class="card-head"><h3>午夜爵士風</h3><span class="card-num">08</span></div>
+                <div class="dots"><span style="background:#2B2D42" data-hex="#2B2D42" onclick="cc('#2B2D42')"></span><span style="background:#5C6B8A" data-hex="#5C6B8A" onclick="cc('#5C6B8A')"></span><span style="background:#D4AF37" data-hex="#D4AF37" onclick="cc('#D4AF37')"></span><span style="background:#F2F0ED" data-hex="#F2F0ED" onclick="cc('#F2F0ED')"></span><span style="background:#1A1B2E" data-hex="#1A1B2E" onclick="cc('#1A1B2E')"></span></div>
+                <div class="hex-row">主 #2B2D42 ｜ 輔 #5C6B8A ｜ 強調 #D4AF37 ｜ 背景 #F2F0ED ｜ 文字 #1A1B2E</div>
+                <div><div class="mn" style="background:#2B2D42;color:white"><span class="logo">MyBrand</span><div class="lk"><span>首頁</span><span>產品</span><span>關於</span><span>聯繫</span></div></div><div class="mh" style="background:#F2F0ED;color:#1A1B2E"><h2>打造你的理想生活</h2><p>我們提供最優質的服務，讓每一天都充滿陽光與活力。</p><button class="mb" style="background:#D4AF37;color:#1A1B2E">立即開始</button><button class="mbo" style="color:#2B2D42;border-color:#2B2D42">了解更多</button></div><div class="mc" style="background:white"><div class="mci" style="background:#F2F0ED;color:#1A1B2E"><h4>🎷 快速啟動</h4><p>三步驟完成</p></div><div class="mci" style="background:#f5f2e8;color:#1A1B2E"><h4>🎨 自由定制</h4><p>彈性選擇</p></div><div class="mci" style="background:#F2F0ED;color:#1A1B2E"><h4>💬 即時支援</h4><p>24小時待命</p></div></div></div>
+            </div>
+            <div class="card">
+                <div class="card-head"><h3>復古學院風</h3><span class="card-num">09</span></div>
+                <div class="dots"><span style="background:#3D4F7C" data-hex="#3D4F7C" onclick="cc('#3D4F7C')"></span><span style="background:#2D8659" data-hex="#2D8659" onclick="cc('#2D8659')"></span><span style="background:#E9B44C" data-hex="#E9B44C" onclick="cc('#E9B44C')"></span><span style="background:#F5F2E8" data-hex="#F5F2E8" onclick="cc('#F5F2E8')"></span></div>
+                <div class="hex-row">主 #3D4F7C ｜ 輔 #2D8659 ｜ 強調 #E9B44C ｜ 背景 #F5F2E8</div>
+                <div><div class="mn" style="background:#3D4F7C;color:white"><span class="logo">MyBrand</span><div class="lk"><span>首頁</span><span>產品</span><span>關於</span><span>聯繫</span></div></div><div class="mh" style="background:#F5F2E8;color:#3D4F7C"><h2>打造你的理想生活</h2><p>我們提供最優質的服務，讓每一天都充滿陽光與活力。</p><button class="mb" style="background:#E9B44C;color:#3D4F7C">立即開始</button><button class="mbo" style="color:#3D4F7C;border-color:#3D4F7C">了解更多</button></div><div class="mc" style="background:white"><div class="mci" style="background:#F5F2E8;color:#3D4F7C"><h4>📚 快速啟動</h4><p>三步驟完成</p></div><div class="mci" style="background:#e8f2eb;color:#3D4F7C"><h4>🎨 自由定制</h4><p>彈性選擇</p></div><div class="mci" style="background:#F5F2E8;color:#3D4F7C"><h4>💬 即時支援</h4><p>24小時待命</p></div></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 節慶系 ===== -->
+    <div class="cat">
+        <div class="cat-header"><span class="cat-icon">🎄</span><span class="cat-title">節慶系列</span><span class="cat-desc">節日活動、禮品、派對</span></div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-head"><h3>聖誕經典風</h3><span class="card-num">10</span></div>
+                <div class="dots"><span style="background:#1B5E20" data-hex="#1B5E20" onclick="cc('#1B5E20')"></span><span style="background:#B71C1C" data-hex="#B71C1C" onclick="cc('#B71C1C')"></span><span style="background:#D4AF37" data-hex="#D4AF37" onclick="cc('#D4AF37')"></span><span style="background:#FFF8F0" data-hex="#FFF8F0" onclick="cc('#FFF8F0')"></span><span style="background:#2E2E2E" data-hex="#2E2E2E" onclick="cc('#2E2E2E')"></span></div>
+                <div class="hex-row">主 #1B5E20 ｜ 輔 #B71C1C ｜ 強調 #D4AF37 ｜ 背景 #FFF8F0 ｜ 文字 #2E2E2E</div>
+                <div><div class="mn" style="background:#1B5E20;color:white"><span class="logo">🎄 MyBrand</span><div class="lk"><span>首頁</span><span>產品</span><span>關於</span><span>聯繫</span></div></div><div class="mh" style="background:#FFF8F0;color:#2E2E2E"><h2>打造你的理想生活</h2><p>我們提供最優質的服務，讓每一天都充滿陽光與活力。</p><button class="mb" style="background:#B71C1C;color:white">立即開始</button><button class="mbo" style="color:#1B5E20;border-color:#1B5E20">了解更多</button></div><div class="mc" style="background:white"><div class="mci" style="background:#f2faf3;color:#1B5E20"><h4>🎄 快速啟動</h4><p>三步驟完成</p></div><div class="mci" style="background:#fdf0f0;color:#B71C1C"><h4>🎁 自由定制</h4><p>彈性選擇</p></div><div class="mci" style="background:#fdf8e8;color:#8B6914"><h4>⭐ 即時支援</h4><p>24小時待命</p></div></div></div>
+            </div>
+            <div class="card">
+                <div class="card-head"><h3>聖誕溫馨風</h3><span class="card-num">11</span></div>
+                <div class="dots"><span style="background:#A63D40" data-hex="#A63D40" onclick="cc('#A63D40')"></span><span style="background:#3C6E47" data-hex="#3C6E47" onclick="cc('#3C6E47')"></span><span style="background:#E8C170" data-hex="#E8C170" onclick="cc('#E8C170')"></span><span style="background:#FAF6F0" data-hex="#FAF6F0" onclick="cc('#FAF6F0')"></span><span style="background:#3A2525" data-hex="#3A2525" onclick="cc('#3A2525')"></span></div>
+                <div class="hex-row">主 #A63D40 ｜ 輔 #3C6E47 ｜ 強調 #E8C170 ｜ 背景 #FAF6F0 ｜ 文字 #3A2525</div>
+                <div><div class="mn" style="background:#A63D40;color:white"><span class="logo">🕯️ MyBrand</span><div class="lk"><span>首頁</span><span>產品</span><span>關於</span><span>聯繫</span></div></div><div class="mh" style="background:#FAF6F0;color:#3A2525"><h2>打造你的理想生活</h2><p>我們提供最優質的服務，讓每一天都充滿陽光與活力。</p><button class="mb" style="background:#3C6E47;color:white">立即開始</button><button class="mbo" style="color:#A63D40;border-color:#A63D40">了解更多</button></div><div class="mc" style="background:white"><div class="mci" style="background:#fdf0f0;color:#3A2525"><h4>🕯️ 快速啟動</h4><p>三步驟完成</p></div><div class="mci" style="background:#f0f5f1;color:#3A2525"><h4>🎁 自由定制</h4><p>彈性選擇</p></div><div class="mci" style="background:#fdf8ec;color:#3A2525"><h4>⭐ 即時支援</h4><p>24小時待命</p></div></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 復古 & 北歐 ===== -->
+    <div class="cat">
+        <div class="cat-header"><span class="cat-icon">📻</span><span class="cat-title">復古 &amp; 北歐</span><span class="cat-desc">懷舊、極簡、生活風格</span></div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-head"><h3>復古風（50年代）</h3><span class="card-num">12</span></div>
+                <div class="dots"><span style="background:#2A7B88" data-hex="#2A7B88" onclick="cc('#2A7B88')"></span><span style="background:#E07B5E" data-hex="#E07B5E" onclick="cc('#E07B5E')"></span><span style="background:#EAC76D" data-hex="#EAC76D" onclick="cc('#EAC76D')"></span><span style="background:#FDF6EB" data-hex="#FDF6EB" onclick="cc('#FDF6EB')"></span><span style="background:#2C3338" data-hex="#2C3338" onclick="cc('#2C3338')"></span></div>
+                <div class="hex-row">主 #2A7B88 ｜ 輔 #E07B5E ｜ 強調 #EAC76D ｜ 背景 #FDF6EB ｜ 文字 #2C3338</div>
+                <div><div class="mn" style="background:#2A7B88;color:white"><span class="logo">MyBrand</span><div class="lk"><span>首頁</span><span>產品</span><span>關於</span><span>聯繫</span></div></div><div class="mh" style="background:#FDF6EB;color:#2C3338"><h2>打造你的理想生活</h2><p>我們提供最優質的服務，讓每一天都充滿陽光與活力。</p><button class="mb" style="background:#E07B5E;color:white">立即開始</button><button class="mbo" style="color:#2A7B88;border-color:#2A7B88">了解更多</button></div><div class="mc" style="background:white"><div class="mci" style="background:#e8f4f5;color:#2C3338"><h4>🚗 快速啟動</h4><p>三步驟完成</p></div><div class="mci" style="background:#fdf0ec;color:#2C3338"><h4>🎨 自由定制</h4><p>彈性選擇</p></div><div class="mci" style="background:#fdf8ec;color:#2C3338"><h4>💬 即時支援</h4><p>24小時待命</p></div></div></div>
+            </div>
+            <div class="card">
+                <div class="card-head"><h3>北歐風（經典）</h3><span class="card-num">13</span></div>
+                <div class="dots"><span style="background:#5B7E95" data-hex="#5B7E95" onclick="cc('#5B7E95')"></span><span style="background:#A3BFC9" data-hex="#A3BFC9" onclick="cc('#A3BFC9')"></span><span style="background:#C8956D" data-hex="#C8956D" onclick="cc('#C8956D')"></span><span style="background:#FAFAF8" data-hex="#FAFAF8" onclick="cc('#FAFAF8')"></span><span style="background:#3A3F42" data-hex="#3A3F42" onclick="cc('#3A3F42')"></span></div>
+                <div class="hex-row">主 #5B7E95 ｜ 輔 #A3BFC9 ｜ 強調 #C8956D ｜ 背景 #FAFAF8 ｜ 文字 #3A3F42</div>
+                <div><div class="mn" style="background:#5B7E95;color:white"><span class="logo">MyBrand</span><div class="lk"><span>首頁</span><span>產品</span><span>關於</span><span>聯繫</span></div></div><div class="mh" style="background:#FAFAF8;color:#3A3F42"><h2>打造你的理想生活</h2><p>我們提供最優質的服務，讓每一天都充滿陽光與活力。</p><button class="mb" style="background:#C8956D;color:white">立即開始</button><button class="mbo" style="color:#5B7E95;border-color:#5B7E95">了解更多</button></div><div class="mc" style="background:white"><div class="mci" style="background:#f2f6f8;color:#3A3F42"><h4>🪵 快速啟動</h4><p>三步驟完成</p></div><div class="mci" style="background:#faf5f0;color:#3A3F42"><h4>🎨 自由定制</h4><p>彈性選擇</p></div><div class="mci" style="background:#f2f6f8;color:#3A3F42"><h4>💬 即時支援</h4><p>24小時待命</p></div></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 東方系 ===== -->
+    <div class="cat">
+        <div class="cat-header"><span class="cat-icon">⛩️</span><span class="cat-title">京都和風</span><span class="cat-desc">日式餐廳、旅館、茶室、和服</span></div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-head"><h3>京都和風（冷）</h3><span class="card-num">14</span></div>
+                <div class="dots"><span style="background:#2D4A5E" data-hex="#2D4A5E" onclick="cc('#2D4A5E')"></span><span style="background:#7A9EB1" data-hex="#7A9EB1" onclick="cc('#7A9EB1')"></span><span style="background:#C2555A" data-hex="#C2555A" onclick="cc('#C2555A')"></span><span style="background:#F4F1EC" data-hex="#F4F1EC" onclick="cc('#F4F1EC')"></span><span style="background:#2A2A2F" data-hex="#2A2A2F" onclick="cc('#2A2A2F')"></span></div>
+                <div class="hex-row">主 #2D4A5E ｜ 輔 #7A9EB1 ｜ 強調 #C2555A ｜ 背景 #F4F1EC ｜ 文字 #2A2A2F</div>
+                <div><div class="mn" style="background:#2D4A5E;color:white"><span class="logo">MyBrand</span><div class="lk"><span>首頁</span><span>產品</span><span>關於</span><span>聯繫</span></div></div><div class="mh" style="background:#F4F1EC;color:#2A2A2F"><h2>打造你的理想生活</h2><p>我們提供最優質的服務，讓每一天都充滿陽光與活力。</p><button class="mb" style="background:#C2555A;color:white">立即開始</button><button class="mbo" style="color:#2D4A5E;border-color:#2D4A5E">了解更多</button></div><div class="mc" style="background:white"><div class="mci" style="background:#F4F1EC;color:#2A2A2F"><h4>🏔️ 快速啟動</h4><p>三步驟完成</p></div><div class="mci" style="background:#eaf0f3;color:#2A2A2F"><h4>🎨 自由定制</h4><p>彈性選擇</p></div><div class="mci" style="background:#F4F1EC;color:#2A2A2F"><h4>💬 即時支援</h4><p>24小時待命</p></div></div></div>
+            </div>
+            <div class="card">
+                <div class="card-head"><h3>京都和風（暖）</h3><span class="card-num">15</span></div>
+                <div class="dots"><span style="background:#8C2F2F" data-hex="#8C2F2F" onclick="cc('#8C2F2F')"></span><span style="background:#C8956D" data-hex="#C8956D" onclick="cc('#C8956D')"></span><span style="background:#D4A843" data-hex="#D4A843" onclick="cc('#D4A843')"></span><span style="background:#F5F0E6" data-hex="#F5F0E6" onclick="cc('#F5F0E6')"></span><span style="background:#3A2E28" data-hex="#3A2E28" onclick="cc('#3A2E28')"></span></div>
+                <div class="hex-row">主 #8C2F2F ｜ 輔 #C8956D ｜ 強調 #D4A843 ｜ 背景 #F5F0E6 ｜ 文字 #3A2E28</div>
+                <div><div class="mn" style="background:#8C2F2F;color:white"><span class="logo">MyBrand</span><div class="lk"><span>首頁</span><span>產品</span><span>關於</span><span>聯繫</span></div></div><div class="mh" style="background:#F5F0E6;color:#3A2E28"><h2>打造你的理想生活</h2><p>我們提供最優質的服務，讓每一天都充滿陽光與活力。</p><button class="mb" style="background:#D4A843;color:#3A2E28">立即開始</button><button class="mbo" style="color:#8C2F2F;border-color:#8C2F2F">了解更多</button></div><div class="mc" style="background:white"><div class="mci" style="background:#F5F0E6;color:#3A2E28"><h4>⛩️ 快速啟動</h4><p>三步驟完成</p></div><div class="mci" style="background:#f5ede0;color:#3A2E28"><h4>🎨 自由定制</h4><p>彈性選擇</p></div><div class="mci" style="background:#F5F0E6;color:#3A2E28"><h4>💬 即時支援</h4><p>24小時待命</p></div></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">🎨 精選 15 組配色 ｜ 點擊色點複製 Hex ｜ 60% 背景 + 30% 主色 + 10% 強調</div>
+</div>
+<div class="copy-toast" id="toast"></div>
+<script>function cc(h){navigator.clipboard.writeText(h).then(()=>{const t=document.getElementById('toast');t.textContent='✓ '+h;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000)})}</script>
+
+
+</body></html>
